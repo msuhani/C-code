@@ -4,8 +4,8 @@ int main (){
     int num,flag=0 ;
     printf("Enter the number: ");
     scanf("%d",&num);
-    if (num < 2)
-        return printf("nIt is not a prime number");
+    if (num <2)
+        return printf("It is less than 2 hence not a prime number");
     int n=sqrt(num);
     for(int i=2;i<=n;i++){
        if(num%i==0){
