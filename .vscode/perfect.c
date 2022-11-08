@@ -1,16 +1,17 @@
 #include <stdio.h>
+#include <math.h>
 int main(){
-    int num, div=0, sum=0, fact;
+    int num, sum=1;
     printf("Enter a number: ");
     scanf("%d",&num);
-    for(int i=1;i<=num/2;i++){
-        fact=num%i;
-        if(fact==0)
-            sum=sum+i;
+    if (num < 1)
+        return printf("IT IS NOT A PERF NO");
+    for(int i=2;i<=sqrt(num);i++){
+        if (num%i == 0)
+            sum=sum+i+num/i;
         }
     if(sum==num)
-        printf("IT IS A PERFECT NO");
+        return printf("IT IS A PERFECT NO");
     else 
-       printf("NOT A PERF NO");
-return 0;
+       return printf("IT IS NOT A PERF NO");
 }
