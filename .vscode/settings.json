@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "random": "c",
+        "ratio": "c",
+        "__bit_reference": "c",
+        "__hash_table": "c",
+        "__string": "c",
+        "string": "c",
+        "string_view": "c",
+        "unordered_map": "c",
+        "*.tcc": "c"
+    }
+}
