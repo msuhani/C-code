@@ -1,23 +1,14 @@
 #include <stdio.h>
-int binary_search(int* arr, int left, int right, int num_to_find){
-    if (left>=right)
-        return -1;
-    int mid = (left+right)/2;
-    if (num_to_find==arr[mid])
-        return mid;
-    else if (num_to_find>arr[mid])
-        binary_search(arr, mid, right, num_to_find);
-    else
-        binary_search(arr, left, mid, num_to_find);;
-}
+int binary_search(int arr[], int left, int right, int num_to_find);
 int main(){
     int num;
     printf("enter how many numbers :");
-    scanf("%d", &num);
-    int arr[num];
+    //scanf("%d", &num);
+    num=7;
+    int arr[] = {3, 5, 7, 8, 9, 11, 13};
     for(int i=0;i<num;i++){
         printf("enter the number : ");
-        scanf("%d", &arr[i]);
+        //scanf("%d", &arr[i]);
     }
     int temp;
     printf("the sorted array is \n");
@@ -35,10 +26,10 @@ int main(){
     for(int k=0;k<num;k++)
         printf(" %d", arr[k]);
 
-    int num_to_find;
+    int num_to_find = 5;
     printf("enter the number to search : ");
-    scanf("%d", &num_to_find);
-    int left=0, right=num;
+    //scanf("%d", &num_to_find);
+    int left=0, right=num-1;
     int mid;
     int found = -1;
     found = binary_search(arr, left, right, num_to_find);
@@ -47,3 +38,17 @@ int main(){
     else
         printf("\nelement %d not found", num_to_find);
 }
+int binary_search(int arr[], int left, int right, int num_to_find){
+    int found = -1;
+    if (left>right)
+        return found;
+    int mid = (left+right)/2;
+    if (num_to_find==arr[mid])
+        return mid;
+    else if (num_to_find>arr[mid])
+        found = binary_search(arr, mid+1, right, num_to_find);
+    else
+        found = binary_search(arr, left, mid-1, num_to_find);
+    return found;
+}
+
