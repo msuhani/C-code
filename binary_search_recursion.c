@@ -5,7 +5,7 @@ int main(){
     printf("enter how many numbers :");
     //scanf("%d", &num);
     num=7;
-    int arr[] = {3, 5, 7, 8, 9, 11, 13};
+    int arr[] = {3, 5, 7, 8, 9, 11, 17};
     for(int i=0;i<num;i++){
         printf("enter the number : ");
         //scanf("%d", &arr[i]);
